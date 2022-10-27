@@ -1,0 +1,10 @@
+{% extends "blog/base.html" %} {% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'blog/about.css' %}">
+
+<h1 class="page-title">About</h1>
+
+<div class="content-section">
+    {{ about | safe}}
+</div>
+{% endblock content %}

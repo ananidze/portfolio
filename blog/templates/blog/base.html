@@ -1,0 +1,50 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Font Selection -->
+    <link href="https://fonts.googleapis.com/css2?family=Coda&family=Inconsolata&family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href={% static 'blog/main.css' %}>
+    <title> Giga Ananidze | {{  title }}</title>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <nav class="navbar">
+                <a class="name" href="{% url 'blog-about' %}">Giga Ananidze</a>
+                <hr><div class="dissolved">Backend Dev</div>
+                <div class="page-info">
+                    <a class="logs" href="">About</a>
+                    <a class="logs" href="">Projects</a>
+                    <div class="icon-links">
+                        <a href='https://www.github.com/ananidze' target="_blank">
+                            <img src={% static 'img/github.png' %}></a>
+                        <a href='https://www.linkedin.com/in/ananidze/' target="_blank">
+                            <img src={% static 'img/linkedin.png' %}></a>
+                        <a href='https://twitter.com/ananidz3' target="_blank">
+                            <img src={% static 'img/twitter.png' %}></a>
+                        <a href="https://www.instagram.com/ananidz3">
+                            <img src={% static 'img/instagram.png' %}></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+{#        <div class="row">#}
+            <div class="col-md-14">
+                {% block content %}{% endblock %}
+            </div>
+{#        </div>#}
+    </main>
+
+</body>
+
+</html>
