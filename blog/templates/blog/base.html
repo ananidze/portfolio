@@ -1,7 +1,6 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,15 +9,14 @@
     <link rel="stylesheet" href={% static 'blog/main.css' %}>
     <title>Giga Ananidze | {{ title }}</title>
 </head>
-
 <body>
     <div class="container">
         <nav class="navbar">
             <a class="name" href="{% url 'blog-about' %}">Giga Ananidze</a><hr>
             <div class="dissolved">Backend Dev</div>
             <div class="page-info">
-                <a class="logs" href="">About</a>
-                <a class="logs" href="">Projects</a>
+                <a class="logs" href={% url 'blog-about' %}>About</a>
+                <a class="logs" href={% url 'blog-projects' %}>Projects</a>
                 <div class="icon-links">
                     {% for social in social_links %}
                     <a href={{ social.link }} target="_blank">
@@ -36,5 +34,4 @@
         {# </div>#}
     </main>
 </body>
-
 </html>

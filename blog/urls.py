@@ -1,8 +1,8 @@
 from django.urls import path
 
-from .views import index
+from blog import views
 
 urlpatterns = [
-    path('', index, name='blog-about'),
-    path('giga/<int:pk>/<int:pkk>', index),
+    path('', views.about, name='blog-about'),
+    path('projects', views.projects, name='blog-projects'),
 ]

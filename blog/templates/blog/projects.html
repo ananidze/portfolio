@@ -1,0 +1,31 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'blog/oss.css' %}">
+    <div class="page-title">
+        <h1>Open-Source Projects</h1>
+    </div>
+    <div class="content-section">
+    {% if projects %}
+        <ul class="list-view">
+            {% for project in projects %}
+            <li>
+                <div>
+                    <a href={{ project.url }} target="_blank"><h3>{{ project.name }}</h3></a>
+                    <img src={% static 'img/star-blue.png' %} alt="">
+                    <a class="github-stats">Star</a>
+                    <a class="counter">{{ project.stars_count }}</a>
+                    <img src={% static 'img/fork-blue.png' %} alt="">
+                    <a class="github-stats">Fork</a>
+                    <a class="counter">{{ project.forks_count }}</a>
+                </div>
+                <p>{{ project.description }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h3 style="padding: 50px">No Projects</h3>
+    {% endif %}
+    </div>
+
+{% endblock content %}

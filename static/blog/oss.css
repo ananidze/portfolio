@@ -54,6 +54,7 @@ li p {
 
 .github-stats {
     display: inline;
+    color: white;
     font-size: 1rem;
     padding-top: .3rem;
 }
